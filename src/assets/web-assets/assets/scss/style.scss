@@ -1,0 +1,300 @@
+@import "./layouts/layouts";
+@import "./components/components";
+@import "./Pages/pages";
+.balance-card {
+  background-color: black;
+  color: white;
+}
+.noti-counter{
+  background-color: #ff7f00;
+  color: white;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border-radius: 50%;
+  z-index: 5;
+  margin-left: -26px;
+  font-size: 12px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  top: 3px;
+
+}
+/* notification */
+.dropdown-noti {
+  position: relative;
+  display: inline-block;
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 6;
+    border-radius: 5px;
+    .btn-noti-view{
+      display: block;
+        background: #007bff;
+        width: 100%;
+        color: white;
+        padding: 15px 0px;
+        transition:all 0.3s ease-in-out;
+        border-radius: 0px 0px 5px 5px;
+        text-decoration: none;
+        &:hover{
+            background-color:#2863a3;          
+        }
+    }
+  }
+
+  .dropdown-header h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .tabs {
+    display: flex;
+    margin: 12px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .tab-link-noti {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    background-color: #eee;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  .tab-link-noti.active {
+    color: navy;
+  }
+
+  .tab-content-noti {
+    display: none;
+    padding: 10px;
+    height: 172px;
+    overflow-x:hidden;
+    &::-webkit-scrollbar{
+      width: 0px;
+    }
+  }
+
+  .notification {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .notification-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  .notification-text p {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+.drop-profile {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.drop-profile-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  border-radius: 5px;
+  padding: 10px 0px;
+  top: 60px; /* Adjusted to position below the avatar image */
+  /* right: 0; */
+}
+
+.drop-profile-content a {
+  color: black;
+  padding: 12px 20px;
+  transition: all 0.2s ease-in-out;
+  font-size: 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.drop-profile-content a:hover {
+  background-color: #10182f;
+  color: white;
+}
+
+.showed {
+  display: block !important;
+}
+
+
+body{
+    overflow-x: hidden;
+}
+.terms-condition{
+  margin: auto auto 150px auto;
+}
+  /* Scrollbar styles */
+  body::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #c2c9d2;
+}
+.message-btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all .3s ease-in-out;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff7f00; /* Blue circle */
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px, rgba(0, 0, 0, 0.2) 0px 1px 3px;
+  i{
+    font-size: 36px;
+    color: white;
+  }
+  
+  /* Notification badge */
+  .notification-badge {
+    position: absolute;
+    top: -4px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: #e00; /* Red for badge */
+    color: #fff;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+  }
+}
+
+.message-btn {
+  border: 2px solid transparent; /* Start with no visible border */
+  animation: slideIn 2s ease forwards, borderPulse 3s infinite ease-in-out; /* Added border animation */
+}
+
+/* Icon inside the button */
+.message-btn .icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Text inside the button */
+.message-btn .message-text {
+  font-weight: 600;
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+  0% {
+      transform: translateY(100px);
+      opacity: 0;
+  }
+  50% {
+      transform: translateY(-10px);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(-10px);
+      opacity: 1;
+  }
+}
+
+/* Border pulse animation */
+@keyframes borderPulse {
+  0%, 100% {
+      border-color: transparent; /* Start and end with no visible border */
+  }
+  50% {
+      border-color: #ffffff; /* The border appears at 50% of the animation */
+      border-width: 2px; /* Set the border thickness */
+  }
+}
+
+/* Hover effect */
+.message-btn:hover {
+  background-color: #dd6f00; /* Darker blue on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+  /* Modal styles */
+.modal-box {
+    display: none; /* Hidden initially */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay background */
+    .modal-content {
+        background-color: white;
+        margin: 15% auto; /* Center vertically */
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 500px; /* Limit modal width */
+        text-align: center;
+    }
+    
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: #333;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    /* Button styles */
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+}
+
+  

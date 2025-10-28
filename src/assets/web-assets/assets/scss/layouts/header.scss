@@ -1,0 +1,570 @@
+.navbar {
+    height: 80px;
+    padding: 0px 30px;
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .first-half {
+        display: flex;
+        gap: 20px;
+
+        .logo {
+            .logo-image {
+                height: 100px;
+                width: 110px;
+            }
+        }
+
+        .links {
+            display: flex;
+            align-items: center;
+            
+            .first-ul {
+              margin: 0;
+              gap: 10px;
+              padding: 0;
+              li {
+                  list-style: none;
+                  height: 58px;
+                  cursor: pointer;
+                  display: flex;
+                  align-items: center;
+            a {
+              position: relative;
+              display: block;
+              text-transform: uppercase;
+              margin: 20px 0;
+              padding: 10px;
+              text-decoration: none;
+              color: #262626;
+              font-family: 'Inter';
+              font-size: 13px;
+              font-weight: 700;
+              transition: .5s;
+              z-index: 1;
+              &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-top: 2px solid #ff7f00;
+                border-bottom: 2px solid #ff7f00;
+                transform: scaleY(2);
+                opacity: 0;
+                transition: .3s;
+              }
+              &:after {
+                content: '';
+                position: absolute;
+                top: 2px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #ff7f00;
+                transform: scale(0);
+                opacity: 0;
+                transition: .3s;
+                z-index: -1;
+              }
+              &:hover {
+                color: #fff;
+                &:before {
+                  transform: scaleY(1);
+                  opacity: 1;
+                }
+                &:after {
+                  transform: scaleY(1);
+                  opacity: 1;
+                }
+              }
+            }
+            &.dropdown {
+                i{
+                    transition: all 0.5s ease-in-out;
+                }
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    min-width: 200px;
+                    background-color: #fff;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    border-radius: 5px;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                    padding: 10px 0;
+                    z-index: 10;
+                    transition:.5s ;
+                    
+                    li {
+                        white-space: nowrap;
+                        padding: 10px 20px;
+                        color: #333;
+                        font-size: 11px;
+                        height: 35px;
+  
+                        a {
+                            padding: 0;
+                            background: none;
+                            text-decoration: none;
+                        }
+                        &:hover {
+                          color: white;
+                            background: #ff7f00;
+                        }
+                    }
+  
+                    // Submenu (right-hand side)
+                    .sub-dropdown {
+                        position: relative;
+                        height: 39px;
+                        font-size: 11px;
+  
+                        &:hover .sub-menu {
+                            display: block;
+                        }
+                        .subdropdowns{
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                        }
+  
+                        .sub-menu {
+                            display: none;
+                            position: absolute;
+                            top: 0;
+                            left: 100%;
+                            min-width: 150px;
+                            background-color: #fff;
+                            border: 1px solid rgba(0, 0, 0, 0.1);
+                            border-radius: 5px;
+                            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+                            padding: 10px 0;
+                        }
+                    }
+                }
+  
+                // Show dropdown on hover
+                &:hover .dropdown-menu {
+                    display: block;
+                }
+                &:hover i {
+                    rotate: 180deg;
+                }
+            }
+          }
+        }
+        }
+    }
+
+    .second-half {
+        display: flex;
+        align-items: center;
+
+        ul {
+            margin: 0;
+            gap: 10px;
+            padding: 0;
+
+            li {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+              /* Tooltip container */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-bottom {
+  position: relative;
+  text-decoration: none;
+}
+
+/* Tooltip arrow */
+.tooltip-bottom::before {
+  content: "";
+  position: absolute;
+  top: 100%; /* Place the arrow below the element */
+  left: 40%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-bottom-color: black; /* Arrow color */
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Tooltip text box */
+.tooltip-bottom::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 10px); /* Position tooltip below the arrow */
+  left: -67%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 9;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Show tooltip on hover */
+.tooltip-bottom:hover::before,
+.tooltip-bottom:hover::after {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(4px); /* Slide effect on show */
+}
+
+
+                input,
+                button {
+                    border: none;
+                    background: none;
+                    outline: none;
+                    padding: 0px;
+                }
+
+                button {
+                    cursor: pointer;
+                }
+
+                .search-box {
+                    display: flex;
+                    background-color: rgb(245 243 243);
+                    border-radius: 50px;
+                }
+                
+                .search-box-input {
+                    width: 240px;
+                    font-size: 14px;
+                    background-color: rgb(245 243 243);
+                    color: black;
+                    transition: .5s;
+                    border-radius: 50px;
+                    padding-left: 2em;
+                    padding-right: 1em;
+                }
+
+                .search-box-btn {
+                    display: flex;
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    background-color:#ff7f00;
+                    transition: .3s;
+                }
+
+                .search-box-icon {
+                    margin: auto;
+                    color: white;
+                    font-weight: bold;
+                }
+
+                .search-box-input::placeholder {
+                    color: black;
+                    opacity: .7;
+                }
+
+
+                .search-box-btn:active {
+                    transform: scale(.75);
+                }
+
+                .click-btn {
+                    display: flex;
+                    width: 120px;
+                    height: 40px;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0.5rem;
+                    line-height: 35px;
+                    border: 1px solid;
+                    border-radius: 5px;
+                    text-align: center;
+                    font-size: 16px;
+                    color: #000;
+                    text-decoration: none;
+                    transition: all 0.35s;
+                    box-sizing: border-box;
+                  }
+                  
+                  
+                  
+                  
+                  .btn-style700 {
+                    position: relative;
+                    border-color: #979695;
+                    color: #979695;
+                  }
+                  .btn-style700::before, .btn-style700::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border-color: #ff7f00;
+                    border-radius: 5px;
+                    border-style: solid;
+                    transition: all 0.35s;
+                    content: "";
+                    z-index: 1;
+                  }
+                  .btn-style700::before {
+                    width: 0;
+                    height: 100%;
+                    border-width: 1px 0 1px 0;
+                  }
+                  .btn-style700::after {
+                    width: 100%;
+                    height: 0;
+                    border-width: 0 1px 0 1px;
+                  }
+                  .btn-style700:hover {
+                    border-color: #ff7f00;
+                    color: #ff7f00;
+                  }
+                  .btn-style700:hover::before {
+                    width: 100%;
+                    border-width: 1px 0 1px 0;
+                  }
+                  .btn-style700:hover::after {
+                    height: 100%;
+                    border-width: 0 1px 0 1px;
+                  }
+                  
+                  .btn-style702 {
+                    position: relative;
+                    border-color: transparent;
+                    color: #fff;
+                    background-color: #ff7f00;
+                    transition: all 0.3s ease-in-out;
+                  }
+                  .btn-style702::before, .btn-style702::after {
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    transition: all 0.3s;
+                    content: "";
+                  }
+                  .btn-style702::before {
+                    width: 100%;
+                    left: 0;
+                    border-radius: 5px;
+                    background-color: #ff7f00;
+                    z-index: -1;
+                  }
+                  .btn-style702::after {
+                    width: 0;
+                    left: 50%;
+                    border-top: 1px solid transparent;
+                    border-bottom: 1px solid transparent;
+                    transform: translate(-50%, 0);
+                    z-index: 1;
+                  }
+                  .btn-style702:hover {
+                    color: #ff7f00;
+                    background-color: transparent;
+                  }
+                  .btn-style702:hover::before {
+                    transform: scale(0, 1);
+                  }
+                  .btn-style702:hover::after {
+                    width: 100%;
+                    border-color: #ff7f00;
+                    transition-delay: 0.2s;
+                  }
+                  
+            }
+                
+#select-container {
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    z-index: 10;
+    background: #FFFFFF;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: height 0.2s ease-in-out, border-radius 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    &::-webkit-scrollbar {
+        width: 0; /* Scrollbar ki width zero karne ke liye */
+        height: 0; /* Horizontal scrollbar ko bhi hide karne ke liye */
+      }
+    
+    &:hover {
+      height: 186px; /* Can't use height: auto & transition effect */
+      border-radius: 20px;
+      box-shadow: 0px 7px 10px rgba(79, 104, 113, 0.30);
+    }
+    ul {
+      list-style-type: none;
+      position: relative;
+      padding: 17px 0px 0px 38px;
+      li {
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+        &:first-child {
+          img {
+            cursor: default;
+          }
+        }
+        img {
+          width: 25px;
+          height: 25px;
+          
+          display: block;
+          left: 50%;
+          transform: translate(-103%, -40%);
+          margin-bottom: 8px;
+      
+          border-radius: 50%;
+          border: 2px solid #FFFFFF;
+          box-shadow: 0px 0px 6px rgba(79, 104, 113, 0.30);
+          
+          cursor: pointer;
+          transition: all 0.1s ease-in-out;        
+          &:hover {
+            box-shadow: 0px 5px 10px rgba(79, 104, 113, 0.30);
+            transform: translate(-103%, -40%) scale(1.08);
+          }
+        }  
+      }
+    }
+  }
+  
+  
+  
+  
+  /* TOOLTIP STYLES FROM THIS PEN https://codepen.io/tutsplus/pen/WROvdG */
+  [tooltip] {
+    position: relative; /* opinion 1 */
+    font-weight: bold;
+  }
+  
+  /* Applies to all tooltips */
+  [tooltip]::before,
+  [tooltip]::after {
+    text-transform: none; /* opinion 2 */
+    font-size: 12px; /* opinion 3 */
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    display: none;
+    opacity: 0;
+  }
+  [tooltip]::before {
+    content: '';
+    border: 5px solid transparent; /* opinion 4 */
+    z-index: 1001; /* absurdity 1 */
+  }
+  [tooltip]::after {
+    content: attr(tooltip); /* magic! */
+  
+    /* most of the rest of this is opinion */
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+  
+    /*
+      Let the content set the size of the tooltips
+      but this will also keep them from being obnoxious
+      */
+    width: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 3px 0px;
+    border-radius: .3ch;
+    box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+    background: #465663;
+    color: #fff;
+    z-index: 1000; /* absurdity 2 */
+  }
+  
+  /* Make the tooltips respond to hover */
+  [tooltip]:hover::before,
+  [tooltip]:hover::after {
+    display: block;
+  }
+  
+  /* don't show empty tooltips */
+  [tooltip='']::before,
+  [tooltip='']::after {
+    display: none !important;
+  }
+  
+  /* FLOW: UP */
+  [tooltip]:not([flow])::before,
+  [tooltip][flow^="up"]::before {
+    bottom: 50%;
+    border-bottom-width: 0;
+    border-top-color: #465663;
+  }
+  [tooltip]:not([flow])::after,
+  [tooltip][flow^="up"]::after {
+    bottom: calc(50% + 5px);
+  }
+  [tooltip]:not([flow])::before,
+  [tooltip]:not([flow])::after,
+  [tooltip][flow^="up"]::before {
+    left: -15.5px;
+    bottom: 40px;
+    transform: translate(-50%, -.5em);
+  }
+  [tooltip][flow^="up"]::after {
+    left: -15.5px;
+    bottom: 45px;
+    transform: translate(-50%, -.5em);
+  }
+  
+  /* FLOW: DOWN */
+  [tooltip][flow^="down"]::before {
+    top: 70%;
+    border-top-width: 0;
+    border-bottom-color: #465663;
+  }
+  [tooltip][flow^="down"]::after {
+    top: calc(70% + 5px);
+  }
+  [tooltip][flow^="down"]::before,
+  [tooltip][flow^="down"]::after {
+    left: -15.5px;
+    transform: translate(-50%, .5em);
+  }
+  
+  /* KEYFRAMES */
+  @keyframes tooltips-vert {
+    to {
+      opacity: .9;
+      transform: translate(-50%, 0);
+    }
+  }
+  
+  /* FX All The Things */
+  [tooltip]:not([flow]):hover::before,
+  [tooltip]:not([flow]):hover::after,
+  [tooltip][flow^="up"]:hover::before,
+  [tooltip][flow^="up"]:hover::after,
+  [tooltip][flow^="down"]:hover::before,
+  [tooltip][flow^="down"]:hover::after {
+    animation: tooltips-vert 300ms ease-out forwards;
+  }
+  
+            
+        }
+    }
+}

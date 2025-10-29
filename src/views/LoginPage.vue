@@ -44,8 +44,8 @@
           <span class="divider divider-text divider-light">OR</span>
 
           <div class="social-row">
-            <a href="#"><img src="@/assets/images/google-icon-removebg-preview.png" alt="Google"></a>
-            <a href="#"><img src="@/assets/images/facebook-logo.jpg" alt="Facebook"></a>
+            <a href="#"><img src="@/assets/web-assets/assets/images/google-icon-removebg-preview.png" alt="Google"></a>
+            <a href="#"><img src="@/assets/web-assets/assets/images/facebook-logo.jpg" alt="Facebook"></a>
           </div>
         </form>
         

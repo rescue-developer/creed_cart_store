@@ -4,7 +4,7 @@
       <div class="first-half">
         <div class="logo">
           <router-link to="/">
-            <img src="@/assets/images/company-logo-removebg-preview.png" class="logo-image" alt="Creed Cart">
+            <img src="@/assets/web-assets/assets/images/company-logo-removebg-preview.png" class="logo-image" alt="Creed Cart">
           </router-link>
         </div>
         <div class="links">
@@ -44,7 +44,7 @@
           <li>
             <div class="tooltip-wrapper">
               <a href="#" class="tooltip-bottom" data-tooltip="Help Center!">
-                <img src="@/assets/images/help-center.png" width="40px" height="40px" alt="">
+                <img src="@/assets/web-assets/assets/images/help-center.png" width="40px" height="40px" alt="">
               </a>
             </div>
           </li>
@@ -82,7 +82,7 @@
                 </div>
                 <div v-show="activeTab === 'new'" class="tab-content-noti">
                   <div class="notification">
-                    <img src="@/assets/images/avatar-web.jpeg" alt="Notification Image" class="notification-img">
+                    <img src="@/assets/web-assets/assets/images/avatar-web.jpeg" alt="Notification Image" class="notification-img">
                     <div class="notification-text">
                       <p>You have a new message from John.</p>
                     </div>
@@ -90,7 +90,7 @@
                 </div>
                 <div v-show="activeTab === 'seen'" class="tab-content-noti">
                   <div class="notification">
-                    <img src="@/assets/images/avatar-web.jpeg" alt="Notification Image" class="notification-img">
+                    <img src="@/assets/web-assets/assets/images/avatar-web.jpeg" alt="Notification Image" class="notification-img">
                     <div class="notification-text">
                       <p>Project update received from the development team.</p>
                     </div>
@@ -107,10 +107,10 @@
             <div id="select-container">
               <ul>
                 <li @click="changeLanguage('EN')">
-                  <img src="@/assets/images/america.png" alt="English">
+                  <img src="@/assets/web-assets/assets/images/america.png" alt="English">
                 </li>
                 <li @click="changeLanguage('PK')">
-                  <img src="@/assets/images/pakistan.png" alt="Pakistan">
+                  <img src="@/assets/web-assets/assets/images/pakistan.png" alt="Pakistan">
                 </li>
               </ul>
             </div>
@@ -118,8 +118,8 @@
 
           <li v-if="isLoggedIn">
             <div class="drop-profile">
-              <img 
-                src="@/assets/images/avatar-web.jpeg" 
+              <img
+                src="@/assets/web-assets/assets/images/avatar-web.jpeg"
                 alt="Avatar" 
                 width="50px" 
                 height="50px"

@@ -64,7 +64,7 @@ const orders = ref([
         name: 'Stylish T-Shirt',
         quantity: 2,
         price: 295,
-        image: '/src/assets/images/t-shirt_product.jpg'
+        image: '/src/assets/web-assets/assets/images/t-shirt_product.jpg'
       }
     ]
   }

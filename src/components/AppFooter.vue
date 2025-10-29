@@ -1,7 +1,7 @@
 <template>
   <footer id="footer">
     <div class="foot-logo">
-      <img src="@/assets/images/company-logo-removebg-preview.png" width="200px" height="250px" alt="Creed Cart">
+      <img src="@/assets/web-assets/assets/images/company-logo-removebg-preview.png" width="200px" height="250px" alt="Creed Cart">
     </div>
     <div class="info d-flex">
       <div class="links">
@@ -46,8 +46,8 @@
         </div>
         <div class="payment-methods">
           <h6 class="text-c-white fw-800">Payment Methods</h6>
-          <img class="payment-method-img" src="@/assets/images/payment-methods.png" alt="Payment Methods">
-          <img src="@/assets/images/payment-method-2.png" alt="Payment Method" width="60px" height="30px" style="margin-left: 3px;">
+          <img class="payment-method-img" src="@/assets/web-assets/assets/images/payment-methods.png" alt="Payment Methods">
+          <img src="@/assets/web-assets/assets/images/payment-method-2.png" alt="Payment Method" width="60px" height="30px" style="margin-left: 3px;">
         </div>
       </div>
     </div>

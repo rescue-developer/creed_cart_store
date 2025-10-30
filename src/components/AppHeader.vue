@@ -60,19 +60,19 @@
           <li>
             <div class="dropdown-noti">
               <i class="bx bx-bell fs-4 dropdown-toggle" @click="toggleNotifications"></i>
-              <div v-if="showNotifications" class="dropdown-menu">
+              <div class="dropdown-menu" :class="{ show: showNotifications }">
                 <div class="dropdown-header">
                   <h3>Notifications</h3>
                 </div>
                 <div class="tabs">
-                  <button 
-                    class="tab-link-noti" 
+                  <button
+                    class="tab-link-noti"
                     :class="{ active: activeTab === 'new' }"
                     @click="activeTab = 'new'"
                   >
                     New (2)
                   </button>
-                  <button 
+                  <button
                     class="tab-link-noti"
                     :class="{ active: activeTab === 'seen' }"
                     @click="activeTab = 'seen'"
@@ -80,19 +80,37 @@
                     Seen (3)
                   </button>
                 </div>
-                <div v-show="activeTab === 'new'" class="tab-content-noti">
+                <div class="tab-content-noti" :class="{ active: activeTab === 'new' }">
                   <div class="notification">
                     <img src="@/assets/web-assets/assets/images/avatar-web.jpeg" alt="Notification Image" class="notification-img">
                     <div class="notification-text">
                       <p>You have a new message from John.</p>
                     </div>
                   </div>
+                  <div class="notification">
+                    <img src="@/assets/web-assets/assets/images/avatar-web.jpeg" alt="Notification Image" class="notification-img">
+                    <div class="notification-text">
+                      <p>Meeting scheduled with the marketing team tomorrow.</p>
+                    </div>
+                  </div>
                 </div>
-                <div v-show="activeTab === 'seen'" class="tab-content-noti">
+                <div class="tab-content-noti" :class="{ active: activeTab === 'seen' }">
                   <div class="notification">
                     <img src="@/assets/web-assets/assets/images/avatar-web.jpeg" alt="Notification Image" class="notification-img">
                     <div class="notification-text">
                       <p>Project update received from the development team.</p>
+                    </div>
+                  </div>
+                  <div class="notification">
+                    <img src="@/assets/web-assets/assets/images/avatar-web.jpeg" alt="Notification Image" class="notification-img">
+                    <div class="notification-text">
+                      <p>New design mockups have been seen and approved.</p>
+                    </div>
+                  </div>
+                  <div class="notification">
+                    <img src="@/assets/web-assets/assets/images/avatar-web.jpeg" alt="Notification Image" class="notification-img">
+                    <div class="notification-text">
+                      <p>New design are seen and approved.</p>
                     </div>
                   </div>
                 </div>
@@ -120,13 +138,13 @@
             <div class="drop-profile">
               <img
                 src="@/assets/web-assets/assets/images/avatar-web.jpeg"
-                alt="Avatar" 
-                width="50px" 
+                alt="Avatar"
+                width="50px"
                 height="50px"
-                style="border-radius: 50%;" 
+                style="border-radius: 50%;"
                 @click="toggleProfileMenu"
               >
-              <div v-if="showProfileMenu" class="drop-profile-content">
+              <div class="drop-profile-content" :class="{ showed: showProfileMenu }">
                 <router-link to="/account">Manage My Account</router-link>
                 <router-link to="/my-orders">My Orders</router-link>
                 <router-link to="/wishlist">My Wishlist & Followed Stores</router-link>
@@ -152,7 +170,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCartStore } from '@/stores/cart'
 import { useUserStore } from '@/stores/user'
@@ -194,4 +212,21 @@ function handleLogout() {
   showProfileMenu.value = false
   router.push('/')
 }
+
+function handleClickOutside(event) {
+  if (!event.target.closest('.drop-profile') && !event.target.closest('.drop-profile img')) {
+    showProfileMenu.value = false
+  }
+  if (!event.target.closest('.dropdown-noti')) {
+    showNotifications.value = false
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('click', handleClickOutside)
+})
 </script>

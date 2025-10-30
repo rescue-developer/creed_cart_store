@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
+import tshirtProductImg from '@/assets/web-assets/assets/images/t-shirt_product.jpg'
 
 export const useProductsStore = defineStore('products', () => {
   const products = ref([
@@ -12,7 +13,7 @@ export const useProductsStore = defineStore('products', () => {
       rating: 4.9,
       sold: '13.8k',
       reviews: 623,
-      image: '/src/assets/images/t-shirt_product.jpg',
+      image: tshirtProductImg,
       description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum aliquam nisi iste itaque voluptate amet ea iusto quisquam ipsum ut, non ad similique ducimus veritatis distinctio nobis, rerum, aut et!',
       colors: ['red', 'orange', 'brown', 'purple'],
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
@@ -27,7 +28,7 @@ export const useProductsStore = defineStore('products', () => {
       rating: 4.7,
       sold: '10.2k',
       reviews: 432,
-      image: '/src/assets/images/t-shirt_product.jpg',
+      image: tshirtProductImg,
       description: 'Comfortable cotton t-shirt perfect for everyday wear',
       colors: ['blue', 'black', 'white'],
       sizes: ['S', 'M', 'L', 'XL'],

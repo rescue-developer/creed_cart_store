@@ -96,8 +96,10 @@ const productGroups = ref([
   [productsStore.products[0], productsStore.products[0]]
 ])
 
+import tshirtImg from '@/assets/web-assets/assets/images/t-shirts.png'
+
 const topCategories = ref([
-  { id: 1, name: 'T-shirts', image: '/src/assets/web-assets/assets/images/t-shirts.png' },
+  { id: 1, name: 'T-shirts', image: tshirtImg },
   { id: 2, name: 'Shirts', image: 'https://shop.imgacademy.com/cdn/shop/products/royal_ss_crew_4f6f6c7b-c0be-4039-86ef-da55d549f45f_2048x2048.jpg' },
   { id: 3, name: 'Headphones', image: 'https://t3.ftcdn.net/jpg/02/28/19/26/360_F_228192611_akMH8f6lbZ2NedZluGMgZCco0aKRKtGk.jpg' },
   { id: 4, name: 'Bags', image: 'https://images.unsplash.com/photo-1705909237050-7a7625b47fac' },

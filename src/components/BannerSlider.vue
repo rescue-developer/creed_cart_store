@@ -34,7 +34,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import Swiper from 'swiper'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Controller } from 'swiper/modules'
 
 const mainSlider = ref(null)
 const navSlider = ref(null)
@@ -69,7 +69,7 @@ const slides = ref([
 
 onMounted(() => {
   const mainSwiperInstance = new Swiper(mainSlider.value, {
-    modules: [Navigation],
+    modules: [Navigation, Controller],
     loop: true,
     navigation: {
       nextEl: '.swiper-button-next',
@@ -78,6 +78,7 @@ onMounted(() => {
   })
 
   const navSwiperInstance = new Swiper(navSlider.value, {
+    modules: [Controller],
     loop: true,
     slidesPerView: 5,
     spaceBetween: 5,

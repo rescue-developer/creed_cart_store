@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -51,6 +51,11 @@ const router = createRouter({
     {
       path: '/my-reviews',
       name: 'my-reviews',
+      component: () => import('@/views/MyReviewsPage.vue')
+    },
+    {
+      path: '/reviews',
+      name: 'reviews',
       component: () => import('@/views/MyReviewsPage.vue')
     },
     {

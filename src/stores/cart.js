@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 export const useCartStore = defineStore('cart', () => {
   const items = ref([])
@@ -42,6 +42,24 @@ export const useCartStore = defineStore('cart', () => {
   function clearCart() {
     items.value = []
   }
+
+  function initCart() {
+    const savedCart = localStorage.getItem('cart')
+    if (savedCart) {
+      try {
+        items.value = JSON.parse(savedCart)
+      } catch (e) {
+        console.error('Failed to parse cart data:', e)
+        items.value = []
+      }
+    }
+  }
+
+  watch(items, (newItems) => {
+    localStorage.setItem('cart', JSON.stringify(newItems))
+  }, { deep: true })
+
+  initCart()
 
   return {
     items,

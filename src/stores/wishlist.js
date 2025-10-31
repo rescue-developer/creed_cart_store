@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 export const useWishlistStore = defineStore('wishlist', () => {
   const items = ref([])
@@ -35,6 +35,24 @@ export const useWishlistStore = defineStore('wishlist', () => {
   function clearWishlist() {
     items.value = []
   }
+
+  function initWishlist() {
+    const savedWishlist = localStorage.getItem('wishlist')
+    if (savedWishlist) {
+      try {
+        items.value = JSON.parse(savedWishlist)
+      } catch (e) {
+        console.error('Failed to parse wishlist data:', e)
+        items.value = []
+      }
+    }
+  }
+
+  watch(items, (newItems) => {
+    localStorage.setItem('wishlist', JSON.stringify(newItems))
+  }, { deep: true })
+
+  initWishlist()
 
   return {
     items,
